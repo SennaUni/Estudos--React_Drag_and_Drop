@@ -13,6 +13,7 @@ export const Container = styled.div`
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-align: center;
   padding: 5px;
 
@@ -31,8 +32,6 @@ export const Title = styled.h3`
 
 export const TaskList = styled.div`
   padding: 0 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 
   background-color: #EBECF0;
 `;

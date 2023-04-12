@@ -2,13 +2,10 @@ import { Droppable, Draggable } from 'react-beautiful-dnd'
 
 import { TypeColumn, TypeTask } from '../../data/dataset'
 
-import { BsThreeDots } from 'react-icons/bs'
-
 import Task from '../Task'
-import Button from '../Buttom'
 
-import Menu, { MenuProps } from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import MenuButton from '../MenuButton'
+import AddCardButtom from '../AddCardButtom'
 
 import { Container, Header, TaskList, Title } from './styles'
 
@@ -37,17 +34,16 @@ const Column = ({ column, index, tasks }:TypeParamsColumns) => {
               {column.title}
             </Title>
 
-            <Button>
-              <BsThreeDots />
-            </Button>
+            <MenuButton />
           </Header>
           
           <Droppable 
             droppableId={column.id} 
             type='task'
           >
-              {(provided, snapshot) => (
-                  <TaskList
+            {(provided, snapshot) => (
+              <>
+                <TaskList
                   ref={provided.innerRef}
                   // isDraggingOver={snapshot.isDraggingOver}
                   {...provided.droppableProps}
@@ -62,9 +58,14 @@ const Column = ({ column, index, tasks }:TypeParamsColumns) => {
                       index={index} 
                     />
                   })}
+
                   {provided.placeholder}
+
                 </TaskList>
-              )}
+
+                <AddCardButtom />
+              </>
+            )}
             </Droppable>
         </Container>
       )}

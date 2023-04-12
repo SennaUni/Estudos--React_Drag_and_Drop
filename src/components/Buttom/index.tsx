@@ -4,11 +4,12 @@ import { Container } from "./styles";
 
 type ButtonParams = {
   children: ReactNode;
+  onClick?: (event: any) => void;
 }
 
-const Button = ({ children }: ButtonParams) => {
+const Button = ({ children, onClick}: ButtonParams) => {
   return (
-    <Container>
+    <Container onClick={onClick}>
       { children }
     </Container>
   )

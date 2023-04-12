@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd'
 
 import dataset, { TypeData } from '../../data/dataset'
+
 import Column from '../Column'
 
 import { Container } from './styles'
